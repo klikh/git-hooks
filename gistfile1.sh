@@ -12,8 +12,8 @@ newrev="$3"   # and the new object name to be stored in the ref.
 
 # safety check
 if [ -z "$refname" -o -z "$oldrev" -o -z "$newrev" ]; then
-	echo "usage: $0 <ref> <oldrev> <newrev>" >&2
-	exit 1
+  echo "usage: $0 <ref> <oldrev> <newrev>" >&2
+  exit 1
 fi
 
 # master OR 3-4 digits with an optional 'refs/heads/' prefix
@@ -25,8 +25,8 @@ ZERO="0000000000000000000000000000000000000000"
 if [[ $refname =~ $PROTECTED ]] ; then
   # check if it is branch deletion: it is when $newrev is 40 zeros, as stated in `man githooks`
   if [[ $newrev == $ZERO ]]; then
-		echo "*** Deleting a release or the master branch is not allowed in this repository" >&2
-		exit 1
+    echo "*** Deleting a release or the master branch is not allowed in this repository" >&2
+    exit 1
   else 
     # check if this is a fast-foward update (i.e. not a force push): it is when $oldrev is a parent of $newrev
     merge_base=$(git merge-base $oldrev $newrev)
