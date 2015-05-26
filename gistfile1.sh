@@ -25,13 +25,13 @@ ZERO="0000000000000000000000000000000000000000"
 if [[ $refname =~ $PROTECTED ]] ; then
   # check if it is branch deletion: it is when $newrev is 40 zeros, as stated in `man githooks`
   if [[ $newrev == $ZERO ]]; then
-    echo "*** Deleting a release or the master branch is not allowed in this repository" >&2
+    echo "*** Deleting a release or the master branch is not allowed" >&2
     exit 1
   else 
     # check if this is a fast-foward update (i.e. not a force push): it is when $oldrev is a parent of $newrev
     merge_base=$(git merge-base $oldrev $newrev)
     if [[ $oldrev != $merge_base ]]; then
-      echo "*** Force push to a release or to the master branch is not allowed in this repository" >&2
+      echo "*** Force push to a release or to the master branch is not allowed" >&2
       exit 1
     fi
   fi
