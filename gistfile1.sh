@@ -3,7 +3,7 @@
 # Reject force pushes to branches matching a certain pattern,
 # as well as deletion of such branches.
 #
-# Based of the update.sample hook
+# Based on the update.sample hook
 
 # read parameters, per `man githooks`
 refname="$1"  # the name of the ref being updated,
