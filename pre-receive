@@ -19,8 +19,8 @@ do
 
   # create new branch => no further checking needed
   if [[ $oldrev == $ZERO ]]; then
-		continue;
-	fi  
+    continue;
+  fi  
 
   if [[ $refname =~ $PROTECTED ]] ; then
     # check if it is branch deletion
