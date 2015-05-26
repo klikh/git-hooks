@@ -3,7 +3,7 @@
 # Reject force pushes to branches matching a certain pattern,
 # as well as deletion of such branches.
 #
-# Based on the update.sample hook
+# Based on https://github.com/olshanov/git-hooks/blob/master/pre-receive.deny-force-push-to-branches and update.sample
 
 # master OR 3-4 digits with an optional 'refs/heads/' prefix
 PROTECTED="^(refs/heads/)?[0-9]{3,4}|master$"
