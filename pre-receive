@@ -10,7 +10,7 @@
 # master OR 3-4 digits with an optional 'refs/heads/' prefix
 PROTECTED="^(refs/heads/)?[0-9]{3,4}|master$"
 
-# special old/rev revision indicating branch creation or deletion: it is 40 zeros, as stated in `man githooks`
+# special revision indicating branch creation or deletion: it is 40 zeros, as stated in `man githooks`
 ZERO="0000000000000000000000000000000000000000"
 
 # git push can trigger update of several references at once
