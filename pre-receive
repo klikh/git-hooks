@@ -32,7 +32,7 @@ do
       echo "*** Deleting a release or the master branch is not allowed" >&2
       exit 1
     else 
-      # check if this is a fast-foward update (i.e. not a force push): it is when $oldrev is a parent of $newrev
+      # check if this is a fast-foward update (i.e. not a force push): it is when $oldrev is an ancestor of $newrev
       merge_base=$(git merge-base $oldrev $newrev)
       if [[ $oldrev != $merge_base ]]; then
         echo "*** Force push to a release or to the master branch is not allowed" >&2
